@@ -109,7 +109,11 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
               ),
             ),
           ),
-          Expanded(
+          const SizedBox(width: 32),
+
+          SizedBox(
+            width: 340,
+            
             child: ListView(
               children: [
                 ListTile(
