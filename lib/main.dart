@@ -35,16 +35,17 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profil Kartı'),
+        title: const Text('Profil'),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Center(
-            child: Container(
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
               width: 320,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -108,35 +109,36 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                 ]
               ),
             ),
-          ),
-          const SizedBox(width: 32),
-
-          SizedBox(
-            width: 340,
             
-            child: ListView(
-              children: [
-                ListTile(
-                  leading: Icon(Icons.map), 
-                  title: const Text('Adres'),
-                  subtitle: const Text('Bursa, Türkiye'),
-                ),
-                const Divider(),
-                ListTile(
-                  leading: Icon(Icons.phone),
-                  title: const Text('telefon numarası'),
-                  subtitle: const Text('05556667788'),
-                ),
-                const Divider(),
-                ListTile(
-                  leading: Icon(Icons.email),
-                  title: const Text('E-mail'),
-                  subtitle: const Text('deneme@hotmail.com'),
-                )
-              ],
+            const SizedBox(width: 32),
+
+            SizedBox(
+              width: 350,
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.map), 
+                    title: const Text('Adres'),
+                    subtitle: const Text('Bursa, Türkiye'),
+                  ),
+                  const Divider(),
+                  ListTile(
+                    leading: Icon(Icons.phone),
+                    title: const Text('telefon numarası'),
+                    subtitle: const Text('05556667788'),
+                  ),
+                  const Divider(),
+                  ListTile(
+                    leading: Icon(Icons.email),
+                    title: const Text('E-mail'),
+                    subtitle: const Text('deneme@hotmail.com'),
+                  )
+                ],
+              )
             )
-          )
-        ],
+          ],
+        )
       )
     );
   }
