@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom_icons.dart';
+import 'content.dart';
 
 void main(){
   runApp(const MaterialApp(home: ProfilSayfasi()));
@@ -36,7 +37,7 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profil'),
+        title: const Text('Benim Profilim'),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
         centerTitle: true,
@@ -46,6 +47,9 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const PortfolioContent(),
+            const SizedBox(width: 40),
+            // Profil container
             Container(
               width: 320,
               padding: const EdgeInsets.all(20),
@@ -159,6 +163,7 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
               ),
             ),
 
+            // Address and contact info list
             SizedBox(
               width: 350,
               child: ListView(
