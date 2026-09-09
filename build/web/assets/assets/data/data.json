@@ -1,0 +1,18 @@
+{
+  "hakkimda": "Flutter ile modern, duyarlı mobil ve web uygulamaları geliştiriyorum. Temiz mimari ve kullanıcı odaklı arayüzler üzerine odaklanıyorum ve uygulamalar geliştiriyorum",
+  "deneyimler": [
+    {
+      "pozisyon": "Flutter Geliştirici",
+      "sirket": "Freelance / Kişisel Projeler",
+      "donem": "2026 - Günümüz",
+      "aciklama": "Responsive portfolyo arayüzleri ve özel bileşen mimarisi geliştirme."
+    },
+    {
+      "pozisyon": "Gömülü Sistemler & Yazılım Çalışmaları",
+      "sirket": "Ar-Ge & Proje Çalışmaları",
+      "donem": "2023 - Günümüz",
+      "aciklama": "Sensör entegrasyonu, BLE iletişimi ve veri telemetrisi, Robotik Sistemler."
+    }
+  ],
+  "yetenekler": ["Flutter", "Dart", "C", "C++"]
+}
