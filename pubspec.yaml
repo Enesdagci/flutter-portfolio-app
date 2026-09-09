@@ -24,3 +24,4 @@ flutter:
 
   assets:
     - assets/custom_icons/
+    - assets/data/
