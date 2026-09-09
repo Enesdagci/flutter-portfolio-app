@@ -178,13 +178,13 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                   ListTile(
                     leading: Icon(Icons.phone),
                     title: const Text('telefon numarası'),
-                    subtitle: const Text('05556667788'),
+                    subtitle: const Text('5423356750'),
                   ),
                   const Divider(),
                   ListTile(
                     leading: Icon(Icons.email),
                     title: const Text('E-mail'),
-                    subtitle: const Text('deneme@hotmail.com'),
+                    subtitle: const Text('enesdagci1287@hotmail.com'),
                   )
                 ],
               )
