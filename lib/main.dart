@@ -123,8 +123,7 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                           ),
                           const SizedBox(width: 8),
                           IconButton(
-                            icon: CustomBrandIcon.linkedin(size: 24),
-                            color: Colors.indigo,
+                            icon: CustomBrandIcon.linkedin(size: 24),                           
                             tooltip: 'Linkedin',
                             onPressed: (){
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -134,8 +133,7 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                           ),
                           const SizedBox(width: 8),
                           IconButton(
-                            icon: CustomBrandIcon.leetCode(size: 24),
-                            color: Colors.indigo,
+                            icon: CustomBrandIcon.leetCode(size: 24),                            
                             tooltip: 'LeetCode',
                             onPressed: (){
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -146,7 +144,6 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                           const SizedBox(width: 8),
                           IconButton(
                             icon: CustomBrandIcon.eMail(size: 24),
-                            color: Colors.indigo,
                             tooltip: 'E-posta',
                             onPressed: (){
                               ScaffoldMessenger.of(context).showSnackBar(
