@@ -13,16 +13,16 @@ class CustomBrandIcon extends StatelessWidget {
   });
 
   static Widget github({double size = 24, Color? color}) =>
-      CustomBrandIcon(assetName: 'assets/custom icons/icons-github.png', size: size, color: color);
+      CustomBrandIcon(assetName: 'assets/custom_icons/icons-github.png', size: size, color: color);
 
   static Widget linkedin({double size = 24, Color? color}) =>
-      CustomBrandIcon(assetName: 'assets/custom icons/icons-linkedin.png', size: size, color: color);
+      CustomBrandIcon(assetName: 'assets/custom_icons/icons-linkedin.png', size: size, color: color);
   
   static Widget eMail({double size = 24, Color? color}) =>
-      CustomBrandIcon(assetName: 'assets/custom icons/icons-outlook.png', size: size, color: color);
+      CustomBrandIcon(assetName: 'assets/custom_icons/icons-outlook.png', size: size, color: color);
   
   static Widget leetCode({double size = 24, Color? color}) => 
-      CustomBrandIcon(assetName: 'assets/custom icons/icons-leetcode.png', size: size, color: color);
+      CustomBrandIcon(assetName: 'assets/custom_icons/icons-leetcode.png', size: size, color: color);
 
   @override
   Widget build(BuildContext context) {

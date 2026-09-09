@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_icons.dart';
 
 void main(){
   runApp(const MaterialApp(home: ProfilSayfasi()));
@@ -103,14 +104,63 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                       Text(
                         'Beğeni Sayısı: $likes',
                         style: const TextStyle(fontSize: 16, color: Colors.grey),
+                      ),
+                      // Social media links
+                      const SizedBox(height: 16),
+                      const Divider(indent: 20, endIndent: 30),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            icon: CustomBrandIcon.github(size: 24),
+                            tooltip: 'Github',
+                            onPressed: (){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Github\'a yönlendiriliyor...'))
+                              );
+                            },
+                          ),
+                          const SizedBox(width: 8),
+                          IconButton(
+                            icon: CustomBrandIcon.linkedin(size: 24),
+                            color: Colors.indigo,
+                            tooltip: 'Linkedin',
+                            onPressed: (){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Linkedin\'e yönlendiriliyor...'))
+                              );
+                            },
+                          ),
+                          const SizedBox(width: 8),
+                          IconButton(
+                            icon: CustomBrandIcon.leetCode(size: 24),
+                            color: Colors.indigo,
+                            tooltip: 'LeetCode',
+                            onPressed: (){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('LeetCode\'a yönlendiriliyor...'))
+                              );
+                            },
+                          ),
+                          const SizedBox(width: 8),
+                          IconButton(
+                            icon: CustomBrandIcon.eMail(size: 24),
+                            color: Colors.indigo,
+                            tooltip: 'E-posta',
+                            onPressed: (){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('E-posta\'a yönlendiriliyor...'))
+                              );
+                            },
+                          )
+                        ],
                       )
                     ]
-                  )
+                  ),
                 ]
               ),
             ),
-            
-            const SizedBox(width: 32),
 
             SizedBox(
               width: 350,
