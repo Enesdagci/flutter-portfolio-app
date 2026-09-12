@@ -37,7 +37,7 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Benim Profilim'),
+        title: const Text('Profilim'),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
         centerTitle: true,
@@ -65,9 +65,8 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                 children: [
                   const CircleAvatar(
                     radius: 40,
-                    backgroundColor: Colors.indigo,
-                    child: Icon(Icons.person, size: 50, color: Colors.white,),
-                  ),
+                    backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/162743017?v=4') ,
+                    ),
                   const SizedBox(height: 12),
                   const Text(
                     'Enes Dağdelen',
