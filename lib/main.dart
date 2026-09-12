@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'custom_icons.dart';
 import 'content.dart';
 
+final Uri _url = 
 void main(){
   runApp(const MaterialApp(home: ProfilSayfasi()));
+}
+
+Future<void> goLink(String urlAdresi) async {
+  final Uri uri = Uri.parse(urlAdresi);
+  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+    throw Exception('Link açılamadı: $urlAdresi');
+  }
 }
 
 class ProfilSayfasi extends StatefulWidget{
@@ -119,9 +128,7 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                             icon: CustomBrandIcon.github(size: 24),
                             tooltip: 'Github',
                             onPressed: (){
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Github\'a yönlendiriliyor...'))
-                              );
+                              goLink('https://github.com/Enesdagci')             
                             },
                           ),
                           const SizedBox(width: 8),
