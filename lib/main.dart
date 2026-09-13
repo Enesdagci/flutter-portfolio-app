@@ -90,8 +90,8 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                     children: [
                       ElevatedButton.icon(
                         onPressed: () {},
-                        icon: Icon(Icons.message),
-                        label: const Text('Mesaj')
+                        icon: CustomBrandIcon.resume(size: 24),
+                        label: const Text('Özgeçmiş/ Cv')
                       ),
                       OutlinedButton.icon(
                         onPressed: () {},
