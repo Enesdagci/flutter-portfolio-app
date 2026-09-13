@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'custom_icons.dart';
 import 'content.dart';
 
-final Uri _url = 
 void main(){
   runApp(const MaterialApp(home: ProfilSayfasi()));
 }
@@ -127,39 +126,25 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                           IconButton(
                             icon: CustomBrandIcon.github(size: 24),
                             tooltip: 'Github',
-                            onPressed: (){
-                              goLink('https://github.com/Enesdagci')             
-                            },
+                            onPressed: () => goLink('https://github.com/Enesdagci')       
                           ),
                           const SizedBox(width: 8),
                           IconButton(
                             icon: CustomBrandIcon.linkedin(size: 24),                           
                             tooltip: 'Linkedin',
-                            onPressed: (){
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Linkedin\'e yönlendiriliyor...'))
-                              );
-                            },
+                            onPressed: () => goLink('https://www.linkedin.com/in/enes-dağdelen-27204a2a4')
                           ),
                           const SizedBox(width: 8),
                           IconButton(
                             icon: CustomBrandIcon.leetCode(size: 24),                            
                             tooltip: 'LeetCode',
-                            onPressed: (){
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('LeetCode\'a yönlendiriliyor...'))
-                              );
-                            },
+                            onPressed: () => goLink('https://leetcode.com/u/Rico_Crasher_16/')
                           ),
                           const SizedBox(width: 8),
                           IconButton(
                             icon: CustomBrandIcon.eMail(size: 24),
                             tooltip: 'E-posta',
-                            onPressed: (){
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('E-posta\'a yönlendiriliyor...'))
-                              );
-                            },
+                            onPressed: () => goLink('mailto:enesdagci1287@hotmail.com')
                           )
                         ],
                       )
@@ -184,13 +169,16 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                   ListTile(
                     leading: Icon(Icons.phone),
                     title: const Text('telefon numarası'),
-                    subtitle: const Text('5423356750'),
+                    subtitle: const Text('+905423356750'),
                   ),
                   const Divider(),
                   ListTile(
                     leading: Icon(Icons.email),
                     title: const Text('E-mail'),
                     subtitle: const Text('enesdagci1287@hotmail.com'),
+                    onTap: (){
+                      goLink('mailto:enesdagci1287@hotmail.com');
+                    },
                   )
                 ],
               )
