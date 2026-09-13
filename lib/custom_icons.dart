@@ -24,6 +24,9 @@ class CustomBrandIcon extends StatelessWidget {
   static Widget leetCode({double size = 24, Color? color}) => 
       CustomBrandIcon(assetName: 'assets/custom_icons/icons-leetcode.png', size: size, color: color);
 
+  static Widget resume({double size = 24, Color? color}) => 
+      CustomBrandIcon(assetName: 'assets/custom_icons/icons-resume.png', size: size, color: color);
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(
