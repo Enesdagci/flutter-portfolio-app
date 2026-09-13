@@ -35745,10 +35745,10 @@ s.e=!1}else{s.d=q+1
 s.e=!0}},
 $S:0}
 A.a8L.prototype={
-$0(){},
+$0(){return A.l3("https://raw.githubusercontent.com/enesdagci/flutter-portfolio-app/main/assets/cv/enesCv1.pdf")},
 $S:0}
 A.a8M.prototype={
-$0(){return A.l3("https://raw.githubusercontent.com/enesdagci/flutter-portfolio-app/main/assets/cv/enesCv1.pdf")},
+$0(){},
 $S:0}
 A.a8N.prototype={
 $0(){return A.l3("https://github.com/Enesdagci")},
