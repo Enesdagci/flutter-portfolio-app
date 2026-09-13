@@ -9,10 +9,10 @@
     },
     {
       "pozisyon": "Gömülü Sistemler & Yazılım Çalışmaları",
-      "sirket": "Ar-Ge & Proje Çalışmaları",
+      "sirket": "Hitü Ar-Ge & Proje Çalışmaları",
       "donem": "2023 - Günümüz",
       "aciklama": "Sensör entegrasyonu, BLE iletişimi ve veri telemetrisi, Robotik Sistemler."
     }
   ],
-  "yetenekler": ["Flutter", "Dart", "C", "C++"]
+  "yetenekler": ["Flutter", "Dart", "C", "C++", "Python"]
 }
