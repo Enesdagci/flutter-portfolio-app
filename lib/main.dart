@@ -89,12 +89,12 @@ class _ProfilSayfasiState extends State<ProfilSayfasi>{
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton.icon(
-                        onPressed: () {} ,
+                        onPressed: () => goLink('https://raw.githubusercontent.com/enesdagci/flutter-portfolio-app/main/assets/cv/enesCv1.pdf') ,
                         icon: CustomBrandIcon.resume(size: 24),
                         label: const Text('Özgeçmiş/ Cv')
                       ),
                       OutlinedButton.icon(
-                        onPressed: () => goLink('https://raw.githubusercontent.com/enesdagci/flutter-portfolio-app/main/assets/cv/enesCv1.pdf'),
+                        onPressed: () {},
                         icon: Icon(Icons.person_add), 
                         label: Text('Takip Et')
                       )
