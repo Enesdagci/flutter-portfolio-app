@@ -494,7 +494,7 @@ class _Altbilgi extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 32),
       child: Text(
-        '© ${DateTime.now().year} Enes Dağdelen · Flutter ile geliştirildi 💙',
+        '© ${DateTime.now().year} · Enes Dağdelen ·',
         textAlign: TextAlign.center,
         style: TextStyle(color: scheme.onSurfaceVariant, fontSize: 13),
       ),
