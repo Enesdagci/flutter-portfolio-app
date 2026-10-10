@@ -1,109 +1,200 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'widgets.dart';
 
-class PortfolioContent extends StatelessWidget {
+class PortfolioContent extends StatefulWidget {
   const PortfolioContent({super.key});
 
+  @override
+  State<PortfolioContent> createState() => _PortfolioContentState();
+}
+
+class _PortfolioContentState extends State<PortfolioContent> {
+  // Loaded once so rebuilds (e.g. the like button) don't reload the JSON.
+  late final Future<Map<String, dynamic>> _veri = _veriyiYukle();
+
   Future<Map<String, dynamic>> _veriyiYukle() async {
-    final String response = await rootBundle.loadString('assets//data/data.json');
+    final String response = await rootBundle.loadString('assets/data/data.json');
     return jsonDecode(response);
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Map<String, dynamic>>(
-      future: _veriyiYukle(),
+      future: _veri,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return const Padding(
+            padding: EdgeInsets.all(48),
+            child: Center(child: CircularProgressIndicator()),
+          );
         }
 
         if (snapshot.hasError) {
-          return const Text('Veri yüklenirken hata oluştu.');
+          return const SectionCard(
+            icon: Icons.error_outline,
+            title: 'Hata',
+            child: Text('Veri yüklenirken hata oluştu.'),
+          );
         }
 
         final data = snapshot.data!;
         final List deneyimler = data['deneyimler'] ?? [];
         final List yetenekler = data['yetenekler'] ?? [];
 
-        return SizedBox(
-          width: 450,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Abouth
-              const Text(
-                'Hakkımda',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.indigo),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            FadeSlideIn(
+              delay: const Duration(milliseconds: 150),
+              child: SectionCard(
+                icon: Icons.person_outline,
+                title: 'Hakkımda',
+                child: Text(
+                  data['hakkimda'] ?? '',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        height: 1.6,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                ),
               ),
-              const SizedBox(height: 6),
-              Text(
-                data['hakkimda'] ?? '',
-                style: TextStyle(fontSize: 14, color: Colors.grey.shade800, height: 1.4),
+            ),
+            const SizedBox(height: 20),
+            FadeSlideIn(
+              delay: const Duration(milliseconds: 300),
+              child: SectionCard(
+                icon: Icons.auto_awesome_outlined,
+                title: 'Yetenekler',
+                child: Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: yetenekler
+                      .map((item) => HoverLift(
+                            scale: 1.06,
+                            child: Chip(label: Text(item)),
+                          ))
+                      .toList(),
+                ),
               ),
-              const Divider(height: 28),
+            ),
+            const SizedBox(height: 20),
+            FadeSlideIn(
+              delay: const Duration(milliseconds: 450),
+              child: SectionCard(
+                icon: Icons.work_outline,
+                title: 'Deneyimler',
+                child: Column(
+                  children: [
+                    for (var i = 0; i < deneyimler.length; i++)
+                      _DeneyimSatiri(
+                        item: deneyimler[i],
+                        isLast: i == deneyimler.length - 1,
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
 
-              // skills 
-              const Text(
-                'Yetenekler',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.indigo),
-              ),
-              const SizedBox(height: 8),
-              Wrap(
-                spacing: 8,
-                runSpacing: 6,
-                children: yetenekler
-                    .map((item) => Chip(
-                          label: Text(item, style: const TextStyle(fontSize: 12)),
-                          backgroundColor: Colors.indigo.shade50,
-                          side: BorderSide(color: Colors.indigo.shade100),
-                        ))
-                    .toList(),
-              ),
-              const Divider(height: 28),
+/// One experience entry drawn as a vertical timeline node.
+class _DeneyimSatiri extends StatelessWidget {
+  final Map item;
+  final bool isLast;
 
-              // Experience
-              const Text(
-                'Deneyimler',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.indigo),
-              ),
-              const SizedBox(height: 8),
-              ...deneyimler.map((item) => Padding(
-                    padding: const EdgeInsets.only(bottom: 12.0),
+  const _DeneyimSatiri({required this.item, required this.isLast});
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SizedBox(
+            width: 20,
+            child: Column(
+              children: [
+                const SizedBox(height: 4),
+                Container(
+                  width: 14,
+                  height: 14,
+                  decoration: BoxDecoration(
+                    color: scheme.primary,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: scheme.primaryContainer, width: 3),
+                  ),
+                ),
+                if (!isLast)
+                  Expanded(
+                    child: Container(
+                      width: 2,
+                      margin: const EdgeInsets.symmetric(vertical: 4),
+                      color: scheme.outlineVariant,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: isLast ? 0 : 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item['pozisyon'] ?? '',
+                    style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    item['sirket'] ?? '',
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: scheme.primary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(Icons.work_outline, size: 18, color: Colors.indigo),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '${item['pozisyon']} - ${item['sirket']}',
-                                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
-                              ),
-                              Text(
-                                item['donem'],
-                                style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
-                              ),
-                              const SizedBox(height: 2),
-                              Text(
-                                item['aciklama'],
-                                style: TextStyle(color: Colors.grey.shade700, fontSize: 12),
-                              ),
-                            ],
-                          ),
+                        Icon(Icons.calendar_today_outlined, size: 13, color: scheme.onSurfaceVariant),
+                        const SizedBox(width: 6),
+                        Text(
+                          item['donem'] ?? '',
+                          style: textTheme.labelMedium?.copyWith(color: scheme.onSurfaceVariant),
                         ),
                       ],
                     ),
-                  )),
-            ],
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    item['aciklama'] ?? '',
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
