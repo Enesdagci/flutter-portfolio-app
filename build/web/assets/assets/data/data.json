@@ -14,5 +14,157 @@
       "aciklama": "Sensör entegrasyonu, BLE iletişimi ve veri telemetrisi, Robotik Sistemler."
     }
   ],
-  "yetenekler": ["Flutter", "Dart", "C", "C++", "Python"]
+  "yetenekler": [
+    "Flutter",
+    "Dart",
+    "C",
+    "C++",
+    "Python"
+  ],
+  "projeler": [
+    {
+      "ad": "Termodiz",
+      "kategori": "Mobil",
+      "aciklama": "ESP32'ye bağlı 4 sıcaklık sensöründen Wi-Fi (HTTP + mDNS) ile veri alan Flutter uygulaması. Hasta kayıtları SQLite'ta tutuluyor; canlı grafik, ölçüm geçmişi ve kritik sıcaklık farkında alarm var.",
+      "teknolojiler": [
+        "Flutter",
+        "Dart",
+        "ESP32",
+        "SQLite",
+        "fl_chart"
+      ],
+      "link": "https://github.com/Enesdagci/Termodiz"
+    },
+    {
+      "ad": "Hamal V1",
+      "kategori": "Gömülü & Robotik",
+      "aciklama": "ROS 2 tabanlı otonom taşıma robotu. LiDAR ile engel analizi, QR ve çizgi takibi, Nav2 ile navigasyon, yükleme/boşaltma modları ve OpenCR ile motor kontrolü.",
+      "teknolojiler": [
+        "ROS 2",
+        "Python",
+        "LiDAR",
+        "Nav2",
+        "OpenCR"
+      ],
+      "link": "https://github.com/Enesdagci/Hamal_V1"
+    },
+    {
+      "ad": "ESP32 IoT Retro Konsol",
+      "kategori": "Gömülü & Robotik",
+      "aciklama": "Wi-Fi ile kontrol edilen retro slot makinesi ve el konsolu. 8x8 RGB LED matris animasyonları, 16x2 I2C LCD, 8-bit ses ve web kontrol paneli; kasası FreeCAD ile tasarlanıp 3D baskıyla üretildi.",
+      "teknolojiler": [
+        "C++",
+        "ESP32",
+        "OOP",
+        "I2C",
+        "FreeCAD"
+      ],
+      "link": "https://github.com/m-gnr/8x8LED-slot-machine",
+      "ekip": true
+    },
+    {
+      "ad": "ESP32 Bluetooth",
+      "kategori": "Gömülü & Robotik",
+      "aciklama": "Deneyap Kart (ESP32) ile klasik Bluetooth çalışmaları: bağlantı kurma, LED açma/kapama, RGB renk değiştirme ve Bluetooth ile kontrol edilen araba.",
+      "teknolojiler": [
+        "C",
+        "ESP32",
+        "Arduino IDE",
+        "Bluetooth"
+      ],
+      "link": "https://github.com/Enesdagci/Esp_32-Deneyap-_bluetooth"
+    },
+    {
+      "ad": "AGV Robot Tablet",
+      "kategori": "Gömülü & Robotik",
+      "aciklama": "AGV (otomatik yönlendirmeli araç) robotu üzerinde çalışan, AppImage olarak paketlenen Electron tablet arayüzü.",
+      "teknolojiler": [
+        "Electron",
+        "JavaScript",
+        "Node.js"
+      ],
+      "link": "https://github.com/tuxhinux/-agv_robot_tablet",
+      "ekip": true
+    },
+    {
+      "ad": "RiskRadar — Yol Risk Analizi",
+      "kategori": "Yapay Zeka & Görüntü",
+      "aciklama": "ABD trafik kazası verisiyle eğitilmiş XGBoost modeliyle yol riski tahmin eden Streamlit uygulaması. Haritadan konum seçiliyor, Open-Meteo'dan anlık hava durumu alınıyor.",
+      "teknolojiler": [
+        "Python",
+        "XGBoost",
+        "Streamlit",
+        "Pandas",
+        "Folium"
+      ],
+      "link": "https://github.com/Enesdagci/road-risk-analysis"
+    },
+    {
+      "ad": "OpenCV Çalışmaları",
+      "kategori": "Yapay Zeka & Görüntü",
+      "aciklama": "OpenCV ile görüntü işleme denemeleri: perspektif dönüşümü, kenar ve şekil algılama, kameradan QR kod okuma, fareyle çizim ve video kaydı.",
+      "teknolojiler": [
+        "Python",
+        "OpenCV",
+        "NumPy"
+      ],
+      "link": "https://github.com/Enesdagci/Opencv"
+    },
+    {
+      "ad": "Mechanicus Terminal",
+      "kategori": "Masaüstü",
+      "aciklama": "Warhammer 40K makine terminallerinden esinlenen endüstriyel telemetri paneli: telemetri izleme, komut arayüzü, acil durum kontrolleri ve canlı terminal logları.",
+      "teknolojiler": [
+        "Python",
+        "PySide6",
+        "Qt Designer"
+      ],
+      "link": "https://github.com/Enesdagci/mechanicus-terminal"
+    },
+    {
+      "ad": "Python GUI",
+      "kategori": "Masaüstü",
+      "aciklama": "Tkinter ile masaüstü arayüz denemeleri: km–mil ve sıcaklık dönüştürücüler, menüler, kurulum sihirbazı gibi küçük uygulamalar.",
+      "teknolojiler": [
+        "Python",
+        "Tkinter"
+      ],
+      "link": "https://github.com/Enesdagci/Python_Gui"
+    },
+    {
+      "ad": "Otel Rezervasyon Sistemi",
+      "kategori": "Web",
+      "aciklama": "Laravel ile otel rezervasyon sistemi. Admin, otel yöneticisi ve müşteri olmak üzere üç kullanıcı rolü; veriler MySQL'de tutuluyor.",
+      "teknolojiler": [
+        "PHP",
+        "Laravel",
+        "MySQL"
+      ],
+      "link": "https://github.com/Enesdagci/Otel_Rezervasyon"
+    },
+    {
+      "ad": "Rezervasyon Cenneti",
+      "kategori": "Web",
+      "aciklama": "Otel, apart ve bungalov rezervasyon sitesi: giriş/kayıt, otel arama ve admin paneli. Repoda temel HTML ve PHP alıştırmaları da var.",
+      "teknolojiler": [
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "link": "https://github.com/Enesdagci/web_project-Rezervasyon"
+    },
+    {
+      "ad": "Flamebaser",
+      "kategori": "Web",
+      "aciklama": "Firebase temalı tanıtım sitesi: topluluk ve servis sayfaları, giriş/kayıt pencereleri, arama ve kaydırma animasyonları.",
+      "teknolojiler": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "link": "https://github.com/Enesdagci/Flamebaser"
+    }
+  ]
 }
