@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+Future<void> goLink(String urlAdresi) async {
+  final Uri uri = Uri.parse(urlAdresi);
+  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+    throw Exception('Link açılamadı: $urlAdresi');
+  }
+}
 
 /// Rounded card with an icon + title header, used for every content section.
 class SectionCard extends StatelessWidget {
