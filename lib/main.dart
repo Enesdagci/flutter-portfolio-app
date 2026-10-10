@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'custom_icons.dart';
 import 'content.dart';
 import 'theme.dart';
@@ -7,13 +6,6 @@ import 'widgets.dart';
 
 void main(){
   runApp(const PortfolioApp());
-}
-
-Future<void> goLink(String urlAdresi) async {
-  final Uri uri = Uri.parse(urlAdresi);
-  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-    throw Exception('Link açılamadı: $urlAdresi');
-  }
 }
 
 class PortfolioApp extends StatefulWidget {
